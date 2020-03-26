@@ -6,8 +6,6 @@ import Messages from "./components/Messages/Messages";
 import UpdateUser from "./components/UpdateUser";
 import "./components/ProfilePage.css";
 import ProfileCard from "./components/ProfileCard";
-import ProfileImage from './components/ProfileImage'
-
 
 const Profile = props => {
   const messageMatch = useRouteMatch("/profiles/:username/messagefeed");
@@ -21,11 +19,9 @@ const Profile = props => {
         <UpdateUser />
       ) : (
         <React.Fragment>
+          <div>Profile Page</div>
 
-          <div>Profile Page</div> 
-
-       <ProfileCard/>
-
+          <ProfileCard />
         </React.Fragment>
       )}
     </React.Fragment>

@@ -41,34 +41,18 @@ export const uploadImage = formData => (dispatch, getState) => {
 };
 // ----------
 const GET_USER = createActions("getUser");
-export const getUser = () => (dispatch, getState) =>{
+export const getUser = () => (dispatch, getState) => {
   dispatch(GET_USER.START());
 
   const { username } = getState().auth.login.result.username;
   return fetch(url + "/" + username, {
     method: "GET",
-    headers: jsonHeaders,
-    // body: formData
+    headers: jsonHeaders
   })
     .then(handleJsonResponse)
     .then(result => dispatch(UPLOAD_PICTURE.SUCCESS(result)))
     .catch(err => Promise.reject(dispatch(UPLOAD_PICTURE.FAIL(err))));
 };
-
-// const DELETE_USER = createActions("deleteUser");
-// export const deleteUser = () => (dispatch, getState) => {
-//   dispatch(DELETE_USER.START());
-
-//   const {token, username} = getState().auth.login.result;
-//   return fetch(url + "/" + username, {
-//     method: "DELETE",
-//     headers: {Authorization: "Bearer" + token, ...jsonHeaders}
-//   })
-//     .then(handleJsonResponse)
-//     .then(result => dispatch(DELETE_USER.SUCCESS(result)))
-//     .catch(err => Promise.reject(dispatch(DELETE_USER.FAIL(err))));
-// };
-
 
 export const reducers = {
   createUser: createReducer(asyncInitialState, {
@@ -79,8 +63,5 @@ export const reducers = {
   }),
   getUser: createReducer(asyncInitialState, {
     ...asyncCases(GET_USER)
-  }),
-  // deleteUser: createReducer(asyncInitialState, {
-  //   ...asyncCases(DELETE_USER)
-  // })
+  })
 };

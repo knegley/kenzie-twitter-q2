@@ -5,10 +5,6 @@ import { getUser } from "../../redux";
 import ProfileImage from "./ProfileImage";
 
 class ProfileCard extends React.Component {
-  // componentDidMount() {
-  //   this.props.getUser(this.props.username);
-  // }
-
   componentDidUpdate(previousProps) {
     if (this.props.username !== previousProps.username) {
       this.props.getUser(this.props.username);
@@ -16,13 +12,7 @@ class ProfileCard extends React.Component {
   }
 
   render() {
-    //  const userdescription = this.props.about
-    // const user = this.props.result.user;
-<<<<<<< HEAD
-    const username = this.props.username;
-=======
-    const username = JSON.parse(localStorage.getItem("login")).result.username
->>>>>>> ce3e21498408b52ec1f93193e89720c1fd2a8bfd
+    const username = JSON.parse(localStorage.getItem("login")).result.username;
     return (
       <>
         <Card>
@@ -42,13 +32,8 @@ class ProfileCard extends React.Component {
             </Card.Description>
           </Card.Content>
           <Card.Content extra>
-<<<<<<< HEAD
             <Icon name="user" />
             22 Friends
-=======
-              <Icon name="user" />
-              22 Friends
->>>>>>> ce3e21498408b52ec1f93193e89720c1fd2a8bfd
           </Card.Content>
         </Card>
         <ProfileImage />

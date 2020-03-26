@@ -1,30 +1,14 @@
-// import { Image } from "semantic-ui-react";
 import React, { Component } from "react";
 import { Input } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { uploadImage } from "../../redux";
 
 class ProfileImage extends Component {
-  // state = { picture: "" };
-  //    fetch(url + "/" + username/picture{
-  //     method: "PUT",
-  //     headers: jsonHeaders,
-  //     // body: formData
-  //   })
-  //     .then(handleJsonResponse)
-  //     .then(result => dispatch(UPLOAD_PICTURE.SUCCESS(result)))
-  //     .catch(err => Promise.reject(dispatch(UPLOAD_PICTURE.FAIL(err))));
-  // };
-
   handleUploadUserPicture = e => {
     e.preventDefault();
-    const photo = new FormData(e.target)
+    const photo = new FormData(e.target);
     this.props.uploadImage(photo);
   };
-
-  // handleChange = e => {
-  //   this.setState({ [e.target.name]: e.target.value });
-  // };
 
   render() {
     return (
