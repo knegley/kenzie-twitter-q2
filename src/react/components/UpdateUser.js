@@ -1,6 +1,9 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { TextField, Button } from "@material-ui/core";
+import DeleteUser from "./DeleteUser.js";
+// import /Users/lorihenderson/assessment-kwitter-project/src/react/components/Messages/DeleteUser.js
+import {updateuser} from './UpdateUser.css'
 
 const UpdateUser = () => {
   const { register, handleSubmit, reset } = useForm({
@@ -55,7 +58,10 @@ const UpdateUser = () => {
           inputRef={register}
         />
 
+<<<<<<< HEAD
         <div />
+=======
+>>>>>>> ce3e21498408b52ec1f93193e89720c1fd2a8bfd
 
         <TextField
           name="password"
@@ -73,6 +79,10 @@ const UpdateUser = () => {
           Update
         </Button>
       </form>
+<<<<<<< HEAD
+=======
+      <DeleteUser />
+>>>>>>> ce3e21498408b52ec1f93193e89720c1fd2a8bfd
     </React.Fragment>
   );
 };

@@ -10,7 +10,6 @@ import {
   Typography
 } from "@material-ui/core";
 import { useSelector } from "react-redux";
-// import LikeButton from "../LikeButton";
 import RatingExampleHeart from "./ToggleButton";
 import DeleteMessage from "./DeleteMessage";
 
