@@ -2,14 +2,9 @@ import React from "react";
 import { Card, Icon, Image } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { getUser } from "../../redux";
-import ProfileImage from './ProfileImage'
-
+import ProfileImage from "./ProfileImage";
 
 class ProfileCard extends React.Component {
-  // componentDidMount() {
-  //   this.props.getUser(this.props.username);
-  // }
-
   componentDidUpdate(previousProps) {
     if (this.props.username !== previousProps.username) {
       this.props.getUser(this.props.username);
@@ -17,15 +12,14 @@ class ProfileCard extends React.Component {
   }
 
   render() {
-  //  const userdescription = this.props.about
-    // const user = this.props.result.user;
-    const username = JSON.parse(localStorage.getItem("login")).result.username
+    const username = JSON.parse(localStorage.getItem("login")).result.username;
     return (
       <>
         <Card>
           <Image
-          src={`https://kwitter-api.herokuapp.com/users/${username}/picture`} alt='profile_picture'
-          wrapped
+            src={`https://kwitter-api.herokuapp.com/users/${username}/picture`}
+            alt="profile_picture"
+            wrapped
             ui={false}
           />
           <Card.Content>
@@ -38,12 +32,12 @@ class ProfileCard extends React.Component {
             </Card.Description>
           </Card.Content>
           <Card.Content extra>
-              <Icon name="user" />
-              22 Friends
+            <Icon name="user" />
+            22 Friends
           </Card.Content>
         </Card>
-        <ProfileImage/>
-      </>      
+        <ProfileImage />
+      </>
     );
   }
 }
@@ -53,7 +47,7 @@ const mapStateToProps = state => {
     loggedIn: state.auth.login.result.username,
     result: state.users.getUser.result,
     loading: state.users.getUser.loading,
-    error: state.users.getUser.error,
+    error: state.users.getUser.error
   };
 };
 

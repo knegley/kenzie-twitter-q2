@@ -24,7 +24,6 @@ class SignUpForm extends React.Component {
       <React.Fragment>
         <Form id="signup-form" onSubmit={this.createUser}>
           <Form.Field>
-            
             <label>Username</label>
             <input
               name="username"
