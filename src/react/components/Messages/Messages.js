@@ -15,8 +15,6 @@ const Messages = props => {
 
   const storedName =
     JSON.parse(localStorage?.getItem("login"))?.result?.username ?? undefined;
-  const storedAuthToken =
-    JSON.parse(localStorage?.getItem("login"))?.result?.token ?? undefined;
 
   const { register, handleSubmit, reset } = useForm({
     defaultValues: {
@@ -74,10 +72,6 @@ const Messages = props => {
       <br />
       <h3>Message Board for {storedName}</h3>
       <MessageBoard />
-
-      <p>
-        stored token?: {storedAuthToken ? storedAuthToken : "no stored token"}
-      </p>
     </React.Fragment>
   );
 };
