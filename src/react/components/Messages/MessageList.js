@@ -62,7 +62,6 @@ const MessageList = () => {
               Likes: {value.likes.length}
               {value.username === storedName && <DeleteMessage id={value.id} />}
             </ListItem>
-            {/* <LikeButton /> */}
 
             <RatingExampleHeart id={value.id} likeId={value.likes} />
 
