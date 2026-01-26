@@ -41,7 +41,7 @@
   ],
   "devDependencies": {
     "@types/node": "^13.9.1",
-    "dependency-cruiser": "^8.0.2",
+    "dependency-cruiser": "^17.3.7",
     "file-loader": "^6.0.0"
   }
 }
